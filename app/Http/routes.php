@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//static routes should be placed here
+
+//for home route
+Route::get('/', array('as' => 'page.show', 'uses' => 'PageController@show'));
+
+//for all other dynamic routes
+Route::get('/{slug}', array('as' => 'page.show', 'uses' => 'PageController@show'));

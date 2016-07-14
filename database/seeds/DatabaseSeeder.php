@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('pages')->insert([
+            'slug' => 'home',
+            'title' => 'Home',
+            'description' => 'TIYB is organization located in canada.',
+            'content' =>'<h1>Hello User</h1><p>This is home page</p>'
+        ]);
+        DB::table('pages')->insert([
+            'slug' => 'aboutus',
+            'title' => 'About Us',
+            'description' => 'about TIYB - organization that helps people.',
+            'content' =>'<h1>About Us</h1><p>This is About us page</p>'
+        ]);
     }
 }
