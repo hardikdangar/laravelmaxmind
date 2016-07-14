@@ -13,8 +13,18 @@
 
 //static routes should be placed here
 
+Route::get('welcome/', function () {
+    App::setLocale('en');
+    return view("localization.en.index");
+});
+
+Route::get('welcome/{locale}', function ($locale) {
+     return view("localization.index");
+});
+
 //for home route
 Route::get('/', array('as' => 'page.show', 'uses' => 'PageController@show'));
 
 //for all other dynamic routes
 Route::get('/{slug}', array('as' => 'page.show', 'uses' => 'PageController@show'));
+
