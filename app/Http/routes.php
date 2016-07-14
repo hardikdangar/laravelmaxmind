@@ -13,13 +13,8 @@
 
 //static routes should be placed here
 
-Route::get('welcome/', function () {
-    App::setLocale('en');
-    return view("localization.en.index");
-});
-
-Route::get('welcome/{locale}', function ($locale) {
-     return view("localization.index");
+Route::get('/local', function () {
+    return view("localization.index");
 });
 
 //for home route
